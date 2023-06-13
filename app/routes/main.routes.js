@@ -1,9 +1,9 @@
-import { Express } from 'express';
+import express from 'express';
 import { MainController } from '../controller/index.js';
 
 /**
  * Route definitions of the Main page
- * @param {Express} app Instance of an Express application.
+ * @param {express.Express} app Instance of an Express application.
  */
 export const MainRoute = (app) => {
   const router = express.Router();

@@ -7,6 +7,7 @@
   "scripts": {
     "start": "node app/index.js",
     "dev": "nodemon app/index.js",
+    "debug": "nodemon app/index",
     "lint": "eslint app/index.js",
     "lint-fix": "eslint app/index.js --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
