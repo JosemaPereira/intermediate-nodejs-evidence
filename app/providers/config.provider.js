@@ -4,7 +4,7 @@ import 'dotenv/config';
  * @typedef Config
  * @type {object}
  * @property {string} host Hostname
- * @property {(number|boolean)} port Port
+ * @property {(number|string)} port Port
  * @property {string} user Username
  */
 
