@@ -5,9 +5,20 @@ import express from 'express';
 import session from 'express-session';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { handleError, logError } from './middleware/index.js';
+import {
+  configuration,
+  dbConnection,
+  handleError,
+  logError,
+} from './middleware/index.js';
 import { defaultConfig } from './providers/index.js';
-import { MainRoute, StatesRoute } from './routes/index.js';
+import {
+  AboutRoute,
+  BlogRoute,
+  MainRoute,
+  MonitorRoute,
+  StatesRoute,
+} from './routes/index.js';
 
 const app = express();
 const ttl = 100 * 1000;
@@ -29,8 +40,14 @@ app.use(
   }),
 );
 
+app.use(configuration);
+app.use(dbConnection);
+
 MainRoute(app);
 StatesRoute(app);
+AboutRoute(app);
+MonitorRoute(app);
+BlogRoute(app);
 
 app.use(logError);
 app.use(handleError);

@@ -22,6 +22,6 @@ export const logError = (err, req, res, next) => {
  */
 export const handleError = (err, req, res, next) => {
   res
-    .status(constants.HTTP_STATUS_INTERNAL_SERVER_ERROR)
+    .status(err.status || constants.HTTP_STATUS_INTERNAL_SERVER_ERROR)
     .json({ error: err.message });
 };

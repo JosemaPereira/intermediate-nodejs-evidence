@@ -1,0 +1,14 @@
+extends ../../layout/index.pug
+
+block content
+  main
+    h2 Date #{ date }
+    h2 Session Id #{sessionID}
+    h2 Headers:
+      ul
+        each val, key in headers
+          li #{key} : #{val}
+    h2 Query:
+      ul
+        each val, key in query
+          li #{key} : #{val}
