@@ -1,3 +1,4 @@
+/** @module Routes */
 export * from './about.routes.js';
 export * from './blog.routes.js';
 export * from './main.routes.js';

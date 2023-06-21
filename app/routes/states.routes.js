@@ -3,7 +3,10 @@ import { StateController } from '../controller/index.js';
 
 /**
  * Route definitions of the State page
+ * @name StatesRoute
  * @param {express.Express} app Instance of an Express application.
+ * @function
+ * @memberof module:Routes
  */
 export const StatesRoute = (app) => {
   const router = express.Router();

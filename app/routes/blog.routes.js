@@ -1,8 +1,12 @@
 import express from 'express';
 import { BlogController } from '../controller/index.js';
+
 /**
  * Route definitions of the Blog page
+ * @name BlogRoute
  * @param {express.Express} app Instance of an Express application.
+ * @function
+ * @memberof module:Routes
  */
 export const BlogRoute = (app) => {
   const router = express.Router();

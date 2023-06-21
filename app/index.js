@@ -1,3 +1,5 @@
+/** @module Application */
+
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
@@ -19,11 +21,12 @@ import {
   MonitorRoute,
   StatesRoute,
 } from './routes/index.js';
+import Server from './server.js';
 
+const { host, port, user } = defaultConfig;
 const app = express();
 const ttl = 100 * 1000;
-const filename = fileURLToPath(import.meta.url);
-const dirname = path.dirname(filename);
+const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 app.set('views', path.join(dirname, 'views'));
 app.set('view engine', 'pug');
@@ -52,8 +55,4 @@ BlogRoute(app);
 app.use(logError);
 app.use(handleError);
 
-app.listen(defaultConfig.port, () => {
-  console.log(
-    `${defaultConfig.user} listen at http://${defaultConfig.host}:${defaultConfig.port}`,
-  );
-});
+Server(app, host, port, user);
