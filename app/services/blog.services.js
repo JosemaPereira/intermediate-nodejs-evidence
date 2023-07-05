@@ -8,7 +8,7 @@ import { Blog } from '../models/index.js';
  */
 const get = async () => {
   try {
-    const posts = await Blog.model.find();
+    const posts = await Blog.Model.find();
     if (!posts.length) {
       throw new Error('no blog entry found');
     }
@@ -20,11 +20,12 @@ const get = async () => {
 
 /**
  * Services to get all blog entries
+ * @param {import('express').Request} req Request body
  * @returns {Blog.model} all blog entries
  */
 const getByID = async (req) => {
   try {
-    const post = await Blog.model.findById(req.params.id);
+    const post = await Blog.Model.findById(req.params.id);
     if (!post) {
       throw new Error(`no blog entry found with ID:${req.params.id}`);
     }
@@ -41,7 +42,7 @@ const getByID = async (req) => {
  */
 const post = async (req) => {
   try {
-    const newModel = new Blog.model(req.body);
+    const newModel = new Blog.Model(req.body);
     const saveEntry = newModel.save();
     return saveEntry;
   } catch (err) {
@@ -57,7 +58,7 @@ const post = async (req) => {
 const put = async (req) => {
   try {
     const filter = { _id: req.params.id };
-    const result = await Blog.model.findOneAndUpdate(filter, req.body, {
+    const result = await Blog.Model.findOneAndUpdate(filter, req.body, {
       new: true,
     });
     if (!result) {
@@ -77,7 +78,7 @@ const put = async (req) => {
 const drop = async (req) => {
   try {
     const filter = { _id: req.params.id };
-    const result = await Blog.model.deleteOne(filter, req.body, {
+    const result = await Blog.Model.deleteOne(filter, req.body, {
       new: true,
     });
     if (!result) {

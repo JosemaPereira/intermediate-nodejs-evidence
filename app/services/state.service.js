@@ -18,7 +18,7 @@ export const StateService = {
   },
   /**
    * Create session service
-   * @param {import('express').Request} res Request body
+   * @param {import('express').Request} req Request body
    * @param {string} sessionVar Session var name
    */
   createSession: (req, sessionVar) => {
@@ -26,7 +26,7 @@ export const StateService = {
   },
   /**
    * Update session service
-   * @param {import('express').Request} res Request body
+   * @param {import('express').Request} req Request body
    * @param {string} sessionVar Session var name
    */
   updateSession: (req, sessionVar) => {

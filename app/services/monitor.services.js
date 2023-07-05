@@ -18,7 +18,7 @@ export const MonitorServices = {
   /**
    * Get headers
    * @param {import('express').Request} req Request body
-   * @returns {Object} Request headers
+   * @returns {object} Request headers
    */
   getHeaders: (req) => {
     return {

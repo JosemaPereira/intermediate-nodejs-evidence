@@ -9,19 +9,20 @@ import { constants } from 'http2';
  * @param {import('express').NextFunction} next Callback function
  */
 export const logError = (err, req, res, next) => {
-  console.log(err.message);
+  process.stdout.write(`${err.message}\n`);
   next(err);
 };
 
 /**
  * Handle Error middleware
  * @param {Error} err Error object
- * @param {Request} req Request Object
- * @param {Response} res Response Object
+ * @param {import('express').Request} req Request Object
+ * @param {import('express').Response} res Response Object
  * @param {import('express').NextFunction} next Callback function
  */
 export const handleError = (err, req, res, next) => {
   res
+    // @ts-ignore
     .status(err.status || constants.HTTP_STATUS_INTERNAL_SERVER_ERROR)
     .json({ error: err.message });
 };

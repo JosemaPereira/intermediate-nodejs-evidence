@@ -7,7 +7,7 @@ const dbConnectionSting = `mongodb://${process.env.DBUSER}:${process.env.DBPASS}
  * @typedef Config
  * @type {object}
  * @property {string} host Hostname
- * @property {(number|string)} port Port
+ * @property {number} port Port
  * @property {string} user Username
  * @property {string} dbConnectionSting Database url
  */
@@ -15,7 +15,7 @@ const dbConnectionSting = `mongodb://${process.env.DBUSER}:${process.env.DBPASS}
 /** @type {Config} */
 export const defaultConfig = {
   host: process.env.HOST,
-  port: process.env.PORT,
+  port: Number(process.env.PORT),
   user: process.env.USERNAME,
   dbConnectionSting,
 };

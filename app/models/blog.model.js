@@ -21,10 +21,10 @@ const BlogSchema = new Schema({
 /**
  * @typedef BlogModel
  * @type {object}
- * @property {import('mongoose').Model<BlogSchema>} model Model of the Blog document
+ * @property {import('mongoose').Model<BlogSchema>} Model Model of the Blog document
  */
 
 /** @type {BlogModel} */
 export const Blog = {
-  model: model('Blog', BlogSchema),
+  Model: model('Blog', BlogSchema),
 };

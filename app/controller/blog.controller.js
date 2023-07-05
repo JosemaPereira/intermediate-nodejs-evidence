@@ -1,7 +1,8 @@
 import { constants } from 'http2';
 import { BlogServices } from '../services/index.js';
 
-/** Handler for get all blog entries request
+/**
+ * Handler for get all blog entries request
  * @param {import('express').Request} req Request body
  * @param {import('express').Response} res Response body
  * @param {import('express').NextFunction} next Next function
@@ -16,7 +17,8 @@ const get = async (req, res, next) => {
   }
 };
 
-/** Handler for get blog by id request
+/**
+ * Handler for get blog by id request
  * @param {import('express').Request} req Request body
  * @param {import('express').Response} res Response body
  * @param {import('express').NextFunction} next Next function
@@ -31,7 +33,8 @@ const getById = async (req, res, next) => {
   }
 };
 
-/** Handler for create a new blog entry request
+/**
+ * Handler for create a new blog entry request
  * @param {import('express').Request} req Request body
  * @param {import('express').Response} res Response body
  * @param {import('express').NextFunction} next Next function
@@ -45,7 +48,8 @@ const post = async (req, res, next) => {
   }
 };
 
-/** Handler for update a blog entry request
+/**
+ * Handler for update a blog entry request
  * @param {import('express').Request} req Request body
  * @param {import('express').Response} res Response body
  * @param {import('express').NextFunction} next Next function
@@ -60,7 +64,8 @@ const put = async (req, res, next) => {
   }
 };
 
-/** Handler for delete a blog entry request
+/**
+ * Handler for delete a blog entry request
  * @param {import('express').Request} req Request body
  * @param {import('express').Response} res Response body
  * @param {import('express').NextFunction} next Next function

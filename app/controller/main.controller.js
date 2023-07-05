@@ -2,7 +2,8 @@ import { constants } from 'http2';
 import { MainServices } from '../services/index.js';
 
 export const MainController = {
-  /** Get handler for Main route
+  /**
+   * Get handler for Main route
    * Controller functions for Main Route
    * @param {import('express').Request} req Request body
    * @param {import('express').Response} res Response body
